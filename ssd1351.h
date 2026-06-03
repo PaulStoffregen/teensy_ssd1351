@@ -34,11 +34,11 @@ MIT license, all text above must be included in any redistribution
 extern "C" {
 	int _getpid(){ return -1;}
 	int _kill(int pid, int sig){ return -1; }
-	int _write(){return -1;}
+	//int _write(){return -1;}
 }
 
 #ifndef swap
-template <typename T> void __attribute__((always_inline)) swap(T &a, T &b) {
+template <typename T> void __attribute__((always_inline)) inline swap(T &a, T &b) {
 	T t = a;
 	a = b;
 	b = t;
