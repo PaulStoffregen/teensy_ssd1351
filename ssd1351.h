@@ -539,8 +539,8 @@ public:
 	Rect getTextBounds(const char *str, int16_t x, int16_t y) {
 		uint8_t c; // Current character
 		GFXglyph *glyph;
-		uint8_t first = font->first;
-		uint8_t last  = font->last;
+		//uint8_t first = font->first;
+		//uint8_t last  = font->last;
 		int16_t min_x = W;
 		int16_t min_y = H;
 		int16_t max_x = -1;
@@ -593,7 +593,7 @@ public:
 			}
 		}
 
-		return {min_x, min_y, max_x - min_x + 1, max_y - min_y + 1};
+		return {min_x, min_y, (int16_t)(max_x - min_x + 1), (int16_t)(max_y - min_y + 1)};
 	}
 
 	size_t write(uint8_t c) {
